@@ -10,15 +10,13 @@ function ShowElem({elem, setList, list, id}){
 
   function createInput () {
     let res = elem.values.map((tag, num) => {
-      return <input key={num} type={"checkbox"} checked={tag} onChange={()=>changeChecked(num)}/>
+      return <input className={'mx-1'} key={num} type={"checkbox"} checked={tag} onChange={()=>changeChecked(num)}/>
     })
 
     return <>
       {res}
     </>
   }
-
-
 
 
   function startEdit() {
@@ -33,14 +31,14 @@ function ShowElem({elem, setList, list, id}){
 
 
   return <tr>
-    <td>{elem.name}</td>
-    <td>{createInput()}</td>
-    <td>{elem.values.reduce((sum, item) => sum += item ? 1 : 0, 0)}/{elem.values.length}</td>
+    <td className={'text-[#2B3467] py-1.5 px-4 border-b border-[#2B3467] last:border-0'}>{elem.name}</td>
+    <td className={'py-1.5 px-4 bg-[#FCFFE7] border-b border-[#2B3467] min-w-[10rem]'}>{createInput()}</td>
+    <td className={'py-1.5 px-4 border-b border-[#2B3467] text-[#2B3467]'}>{elem.values.reduce((sum, item) => sum += item ? 1 : 0, 0)}/{elem.values.length}</td>
     <td>
-      <button onClick={()=>startEdit()}>Редактировать</button>
+      <button className={'py-1.5 px-3 rounded-2xl bg-[#BAD7E9]'} onClick={()=>startEdit()}>Редактировать</button>
     </td>
     <td>
-      <button onClick={()=>delElem()}>Удалить</button>
+      <button className={'py-1.5 px-3 rounded-2xl bg-[#EB455F] text-[#ffffff]'} onClick={()=>delElem()}>Удалить</button>
     </td>
   </tr>
 
