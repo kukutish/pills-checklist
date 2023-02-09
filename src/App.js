@@ -19,7 +19,7 @@ function App() {
         elem={elem}
         list={list}
         setList={setList}
-        active={elem.active} 
+        active={elem.active}
         id={id}
       />
   })
@@ -36,7 +36,7 @@ function App() {
         {result}
       </tbody>
     </table>
-    <button className={'py-1.5 px-3 rounded-2xl bg-[#2B3467] text-[#ffffff]'} onClick={addElem}>Добавить</button>
+    <button className={'py-1.5 px-3 rounded-2xl bg-[#2B3467] text-[#ffffff] max-w-[8rem]'} onClick={addElem}>Добавить</button>
   </div>
 }
 
