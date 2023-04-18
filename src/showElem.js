@@ -1,6 +1,6 @@
 import React from "react";
 
-function ShowElem({elem, setList, list, id}){
+function ShowElem({elem, setList, list, id, setAmount, setName, amount, name, previousName, setPreviousName}){
 
   function changeChecked (num) {
     let copy = Object.assign([], list)
@@ -18,8 +18,14 @@ function ShowElem({elem, setList, list, id}){
     </>
   }
 
-
   function startEdit() {
+    setPreviousName(elem.name)
+    let copyAmount= Object.assign([], amount)
+    copyAmount.value = elem.amount
+    setAmount(copyAmount)
+    let copyName = Object.assign([], name)
+    copyName.value = elem.name
+    setName(copyName)
     let copy = Object.assign([], list)
     copy[id].active = true
     setList(copy)

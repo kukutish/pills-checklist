@@ -21,6 +21,7 @@ function App() {
         setList={setList}
         active={elem.active}
         id={id}
+
       />
   })
 
