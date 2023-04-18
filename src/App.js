@@ -21,6 +21,7 @@ function App() {
         setList={setList}
         active={elem.active}
         id={id}
+
       />
   })
 
@@ -29,14 +30,15 @@ function App() {
     setList([...list,obj])
   }
 
-  return <>
-    <table>
+  return <div className={'container mx-auto'}>
+    <h1 className={'text-4xl text-[#2B3467] my-5'}>Трекер лекарств</h1>
+    <table className={'mb-5'}>
       <tbody>
         {result}
       </tbody>
     </table>
-    <button onClick={addElem}>Добавить</button>
-  </>
+    <button className={'py-1.5 px-3 rounded-2xl bg-[#2B3467] text-[#ffffff] max-w-[8rem]'} onClick={addElem}>Добавить</button>
+  </div>
 }
 
 
